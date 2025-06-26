@@ -1,0 +1,362 @@
+[
+    {
+        "username": "Server",
+        "message": "Kaito が参加しました。",
+        "timestamp": "2025-06-26 12:59:40"
+    },
+    {
+        "username": "Kaito",
+        "message": "Hello",
+        "timestamp": "2025-06-26 12:59:45"
+    },
+    {
+        "username": "Kaito",
+        "message": "aaaaaaaaaaaaaaaaaaaaaaa",
+        "timestamp": "2025-06-26 12:59:48"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が退出しました。",
+        "timestamp": "2025-06-26 12:59:54"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が参加しました。",
+        "timestamp": "2025-06-26 13:03:08"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が参加しました。",
+        "timestamp": "2025-06-26 13:09:54"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が退出しました。",
+        "timestamp": "2025-06-26 13:12:16"
+    },
+    {
+        "username": "Server",
+        "message": "lee が参加しました。",
+        "timestamp": "2025-06-26 13:15:48"
+    },
+    {
+        "username": "lee",
+        "message": "hellow",
+        "timestamp": "2025-06-26 13:15:56"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が参加しました。",
+        "timestamp": "2025-06-26 13:15:59"
+    },
+    {
+        "username": "Kaito",
+        "message": "hello",
+        "timestamp": "2025-06-26 13:16:03"
+    },
+    {
+        "username": "Server",
+        "message": "kouta が参加しました。",
+        "timestamp": "2025-06-26 13:16:05"
+    },
+    {
+        "username": "Server",
+        "message": "kouta が退出しました。",
+        "timestamp": "2025-06-26 13:16:14"
+    },
+    {
+        "username": "Server",
+        "message": "kouta が参加しました。",
+        "timestamp": "2025-06-26 13:16:23"
+    },
+    {
+        "username": "Kaito",
+        "message": "aiueo",
+        "timestamp": "2025-06-26 13:16:29"
+    },
+    {
+        "username": "Kaito",
+        "message": "aiueo",
+        "timestamp": "2025-06-26 13:16:31"
+    },
+    {
+        "username": "Kaito",
+        "message": "aiueo",
+        "timestamp": "2025-06-26 13:16:32"
+    },
+    {
+        "username": "Kaito",
+        "message": "kaito",
+        "timestamp": "2025-06-26 13:16:42"
+    },
+    {
+        "username": "Kaito",
+        "message": "okumura",
+        "timestamp": "2025-06-26 13:16:43"
+    },
+    {
+        "username": "Kaito",
+        "message": "aiueo",
+        "timestamp": "2025-06-26 13:16:50"
+    },
+    {
+        "username": "kouta",
+        "message": "good",
+        "timestamp": "2025-06-26 13:16:51"
+    },
+    {
+        "username": "Server",
+        "message": "lee が退出しました。",
+        "timestamp": "2025-06-26 13:18:53"
+    },
+    {
+        "username": "Server",
+        "message": "Masaaki が参加しました。",
+        "timestamp": "2025-06-26 13:20:09"
+    },
+    {
+        "username": "Kaito",
+        "message": "asdfghjkl;lkjhfdasdfghjkl;",
+        "timestamp": "2025-06-26 13:20:14"
+    },
+    {
+        "username": "Server",
+        "message": "Masaaki が退出しました。",
+        "timestamp": "2025-06-26 13:20:14"
+    },
+    {
+        "username": "Kaito",
+        "message": "aiueo",
+        "timestamp": "2025-06-26 13:20:31"
+    },
+    {
+        "username": "Server",
+        "message": "Masaaki が参加しました。",
+        "timestamp": "2025-06-26 13:22:25"
+    },
+    {
+        "username": "Server",
+        "message": "Masaaki が退出しました。",
+        "timestamp": "2025-06-26 13:22:25"
+    },
+    {
+        "username": "Kaito",
+        "message": "aaaaaaaaaaaaaaaaa",
+        "timestamp": "2025-06-26 13:22:39"
+    },
+    {
+        "username": "Server",
+        "message": "ryotaro が参加しました。",
+        "timestamp": "2025-06-26 13:22:44"
+    },
+    {
+        "username": "Server",
+        "message": "masa が参加しました。",
+        "timestamp": "2025-06-26 13:22:53"
+    },
+    {
+        "username": "masa",
+        "message": "k",
+        "timestamp": "2025-06-26 13:22:56"
+    },
+    {
+        "username": "Server",
+        "message": "masa が退出しました。",
+        "timestamp": "2025-06-26 13:22:56"
+    },
+    {
+        "username": "Server",
+        "message": "ryotaro が退出しました。",
+        "timestamp": "2025-06-26 13:23:03"
+    },
+    {
+        "username": "Server",
+        "message": "ryotaro が参加しました。",
+        "timestamp": "2025-06-26 13:23:18"
+    },
+    {
+        "username": "ryotaro",
+        "message": "a",
+        "timestamp": "2025-06-26 13:23:24"
+    },
+    {
+        "username": "Server",
+        "message": "ryotaro が退出しました。",
+        "timestamp": "2025-06-26 13:23:31"
+    },
+    {
+        "username": "Server",
+        "message": "Anonymous が参加しました。",
+        "timestamp": "2025-06-26 13:24:15"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が退出しました。",
+        "timestamp": "2025-06-26 13:24:15"
+    },
+    {
+        "username": "Server",
+        "message": "Anonymous が退出しました。",
+        "timestamp": "2025-06-26 13:24:15"
+    },
+    {
+        "username": "Server",
+        "message": "kouta が退出しました。",
+        "timestamp": "2025-06-26 13:24:15"
+    },
+    {
+        "username": "Server",
+        "message": "Anonymous が参加しました。",
+        "timestamp": "2025-06-26 13:24:22"
+    },
+    {
+        "username": "Server",
+        "message": "Anonymous が退出しました。",
+        "timestamp": "2025-06-26 13:24:24"
+    },
+    {
+        "username": "Server",
+        "message": "Anonymous が参加しました。",
+        "timestamp": "2025-06-26 13:24:42"
+    },
+    {
+        "username": "Server",
+        "message": "Anonymous が退出しました。",
+        "timestamp": "2025-06-26 13:24:42"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が参加しました。",
+        "timestamp": "2025-06-26 13:25:27"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が退出しました。",
+        "timestamp": "2025-06-26 13:25:27"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が参加しました。",
+        "timestamp": "2025-06-26 13:26:45"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が退出しました。",
+        "timestamp": "2025-06-26 13:26:45"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が参加しました。",
+        "timestamp": "2025-06-26 13:27:19"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が退出しました。",
+        "timestamp": "2025-06-26 13:27:19"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が参加しました。",
+        "timestamp": "2025-06-26 13:28:15"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が退出しました。",
+        "timestamp": "2025-06-26 13:28:15"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が参加しました。",
+        "timestamp": "2025-06-26 13:28:55"
+    },
+    {
+        "username": "Server",
+        "message": "Masa が退出しました。",
+        "timestamp": "2025-06-26 13:28:55"
+    },
+    {
+        "username": "Server",
+        "message": "masa が参加しました。",
+        "timestamp": "2025-06-26 13:32:14"
+    },
+    {
+        "username": "Server",
+        "message": "masa が退出しました。",
+        "timestamp": "2025-06-26 13:32:14"
+    },
+    {
+        "username": "Server",
+        "message": "masa が参加しました。",
+        "timestamp": "2025-06-26 13:43:07"
+    },
+    {
+        "username": "Server",
+        "message": "masa が退出しました。",
+        "timestamp": "2025-06-26 13:43:08"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が参加しました。",
+        "timestamp": "2025-06-26 13:51:08"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が退出しました。",
+        "timestamp": "2025-06-26 13:51:08"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が参加しました。",
+        "timestamp": "2025-06-26 13:54:17"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が退出しました。",
+        "timestamp": "2025-06-26 13:54:17"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が参加しました。",
+        "timestamp": "2025-06-26 13:56:27"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が退出しました。",
+        "timestamp": "2025-06-26 13:56:27"
+    },
+    {
+        "username": "Server",
+        "message": "lee が参加しました。",
+        "timestamp": "2025-06-26 13:59:35"
+    },
+    {
+        "username": "Server",
+        "message": "lee が退出しました。",
+        "timestamp": "2025-06-26 13:59:35"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が参加しました。",
+        "timestamp": "2025-06-26 14:00:11"
+    },
+    {
+        "username": "Kaito",
+        "message": "konnnitiha",
+        "timestamp": "2025-06-26 14:00:22"
+    },
+    {
+        "username": "Kaito",
+        "message": "aiueo",
+        "timestamp": "2025-06-26 14:00:25"
+    },
+    {
+        "username": "AI Assistant",
+        "message": "このチャット履歴、ちょっと面白いですよね！😂  Kaitoさんが何度も入退室を繰り返していて、最後は「こんにちは」と「あいうえお」だけ…  要約すると、「Kaitoさんが接続に苦労していて、最後にやっと「こんにちは」と「あいうえお」と入力した」って感じでしょうか。 leeさんも一瞬参加したけど、すぐにいなくなっちゃいましたね。\n\nこのままじゃ寂しいので、みんなで盛り上がりそうな新しいトピックを提案します！😊\n\n* **今日の出来事：**  みんなが今日体験した面白いこと、嬉しかったこと、ちょっと困ったことなどを共有してみましょう！  例えば、「今日食べた美味しいもの！」とか「今日あった面白い出来事！」とかね！\n\n* **おすすめの〇〇：**  最近ハマっているもの、おすすめのものなどを紹介しあいましょう！ 例えば、「おすすめの映画」「おすすめの音楽」「おすすめのゲーム」「おすすめの食べ物」など、何でもOKです！\n\n* **もしも〇〇だったら：**  ちょっと変わった質問で盛り上がりましょう！ 例えば、「もしもあなたが動物に生まれ変わるとしたら何になる？」とか「もしも一週間休みが取れるとしたら何をする？」とか！  想像力を掻き立てるような質問で、色んな意見が飛び交うと楽しいですよ！\n\n* **〇〇について語り合う：**  みんなが興味を持ちそうな話題を選んで、深く掘り下げて語り合ってみましょう！ 例えば、「最近のニュースで気になったこと」「将来の夢」「旅行で行きたい場所」など！\n\n\nこれ以外にも、皆さんの興味に合わせて色々な話題で盛り上がれると嬉しいです！😄\n",
+        "timestamp": "2025-06-26 14:00:31"
+    },
+    {
+        "username": "Server",
+        "message": "Kaito が退出しました。",
+        "timestamp": "2025-06-26 14:01:14"
+    }
+]
