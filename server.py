@@ -85,7 +85,7 @@ def send_message(client_socket, message_dict):
 def call_gemini_api(history):
     if not GEMINI_API_KEY: return "AI機能が設定されていません。"
     prompt_history = "\n".join([f"{msg['username']}: {msg['message']}" for msg in history[-10:]])
-    prompt = f"あなたはフレンドリーなAIアシスタントです。\n以下のチャット履歴を読んで、会話の流れを簡単に要約し、次にみんなで話すと盛り上がりそうな新しいトピックをいくつか提案してください。\n\n--- チャット履歴 ---\n{prompt_history}\n--- ここまで ---\n\n提案は、箇条書きなどを使って分かりやすく、親しみやすい口調でお願いします。"
+    prompt = f"あなたはフレンドリーなAIアシスタントです。\n以下のチャット履歴を読んで、会話の流れを簡単に要約してください。\n\n--- チャット履歴 ---\n{prompt_history}\n--- ここまで ---\n\n箇条書きなどを使って分かりやすくお願いします。"
     try:
         response = model.generate_content(prompt)
         return response.text
