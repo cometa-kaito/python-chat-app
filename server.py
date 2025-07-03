@@ -31,28 +31,20 @@ client_info = {}
 board_messages = []
 
 # =================================================================
-# ===== 新しい通信プロトコル用のヘルパー関数 (ここから) =====
+# ===== 通信プロトコル用のヘルパー関数 (変更なし) =====
 # =================================================================
-
 def receive_message(client_socket):
-    """ヘッダーからメッセージ長を読み取り、完全なメッセージを受信する"""
     try:
-        # 4バイトのヘッダーを受信してメッセージ長を取得
         header = client_socket.recv(4)
-        if not header:
-            return None
+        if not header: return None
         msg_len = int.from_bytes(header, 'big')
-
-        # メッセージ本体を、指定された長さになるまで受信し続ける
         chunks = []
         bytes_recd = 0
         while bytes_recd < msg_len:
             chunk = client_socket.recv(min(msg_len - bytes_recd, 4096))
-            if not chunk:
-                return None # 接続が途中で切れた
+            if not chunk: return None
             chunks.append(chunk)
             bytes_recd += len(chunk)
-        
         full_message = b''.join(chunks)
         return json.loads(full_message.decode('utf-8'))
     except (ConnectionResetError, ConnectionAbortedError):
@@ -62,13 +54,10 @@ def receive_message(client_socket):
         return None
 
 def send_message(client_socket, message_dict):
-    """メッセージをJSONに変換し、ヘッダーを付けて送信する"""
     try:
         message_json = json.dumps(message_dict)
         message_bytes = message_json.encode('utf-8')
-        # メッセージの長さを4バイトのヘッダーとして作成
         header = len(message_bytes).to_bytes(4, 'big')
-        # ヘッダーとメッセージ本体を送信
         client_socket.sendall(header + message_bytes)
         return True
     except (ConnectionResetError, ConnectionAbortedError):
@@ -76,18 +65,37 @@ def send_message(client_socket, message_dict):
     except Exception as e:
         print(f"[ERROR] メッセージの送信に失敗しました: {e}")
         return False
-
-# =================================================================
-# ===== 新しい通信プロトコル用のヘルパー関数 (ここまで) =====
 # =================================================================
 
-
-def call_gemini_api(history):
+def call_gemini_api(history, user_prompt):
+    """[機能追加] ユーザー指定のプロンプトを受け取るように変更"""
     if not GEMINI_API_KEY: return "AI機能が設定されていません。"
-    prompt_history = "\n".join([f"{msg['username']}: {msg['message']}" for msg in history[-10:]])
-    prompt = f"あなたはフレンドリーなAIアシスタントです。\n以下のチャット履歴を読んで、会話の流れを簡単に要約してください。\n\n--- チャット履歴 ---\n{prompt_history}\n--- ここまで ---\n\n箇条書きなどを使って分かりやすくお願いします。"
+    
+    # 履歴からテキストメッセージのみを抽出（画像は含めない）
+    prompt_history_list = []
+    # 直近のテキストメッセージ10件を参考にする
+    for msg in filter(lambda m: "message" in m and m.get("message"), history[-20:]):
+        if len(prompt_history_list) >= 10: break
+        prompt_history_list.append(f"{msg.get('username', 'Unknown')}: {msg['message']}")
+    
+    prompt_history = "\n".join(reversed(prompt_history_list)) # 新しい順にする
+
+    # ユーザープロンプトと履歴を組み合わせて最終的なプロンプトを作成
+    final_prompt = (
+        "あなたはチャットを支援する、賢くてフレンドリーなAIアシスタントです。\n"
+        "以下のチャット履歴とユーザーからの指示を考慮して、回答を生成してください。\n"
+        "チャットの参加者のように、自然な言葉で応答してください。\n\n"
+        "--- 直近のチャット履歴 ---\n"
+        f"{prompt_history}\n"
+        "--- ここまで ---\n\n"
+        "--- ユーザーからの指示 ---\n"
+        f"{user_prompt}\n"
+        "--- ここまで ---\n\n"
+        "AIアシスタントとしてのあなたの回答:"
+    )
+
     try:
-        response = model.generate_content(prompt)
+        response = model.generate_content(final_prompt)
         return response.text
     except Exception as e:
         print(f"[ERROR] Gemini APIの呼び出しでエラーが発生しました: {e}")
@@ -104,16 +112,13 @@ def load_chat_log():
 def save_chat_log():
     try:
         with open(CHAT_LOG_FILE, 'w', encoding='utf-8') as f:
-            json.dump(board_messages, f, indent=4, ensure_ascii=False)
+            json.dump(board_messages, f, indent=2, ensure_ascii=False) # indentを2に変更
     except IOError: pass
 
 def broadcast_board_info():
-    """全クライアントに最新の掲示板情報をブロードキャストする"""
     message_to_send = {"command": "BoardInfo", "payload": board_messages}
-    # clientsリストのコピーに対してループ処理を行い、安全に要素を削除できるようにする
     for client_socket in list(clients):
         if not send_message(client_socket, message_to_send):
-            # 送信に失敗したクライアントは切断されたとみなす
             remove_client(client_socket)
 
 def remove_client(client_socket):
@@ -129,20 +134,17 @@ def remove_client(client_socket):
         print(f"[INFO] {user_to_remove} が切断しました。")
         board_messages.append({"username": "Server", "message": f"{user_to_remove} が退出しました。", "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
         save_chat_log()
-        broadcast_board_info() # 退出を全員に通知
+        broadcast_board_info()
 
 def handle_client(client_socket, addr):
     print(f"[INFO] {addr} から新しい接続がありました。")
     username = ""
     try:
-        # クライアントに接続開始を通知
         send_message(client_socket, {"command": "ConnectionStart"})
         
         while True:
-            # クライアントからのメッセージを新しい方式で受信
             msg = receive_message(client_socket)
-            if msg is None:
-                break # 接続が切れた
+            if msg is None: break
             
             command = msg.get("command")
             payload = msg.get("payload")
@@ -163,9 +165,16 @@ def handle_client(client_socket, addr):
                 save_chat_log()
                 broadcast_board_info()
             
-            elif command == "AI_HELP":
-                print(f"[AI] {username} がAIアシスタントを呼び出しました。")
-                ai_response = call_gemini_api(board_messages)
+            elif command == "SendImage": # [新機能] 画像メッセージの処理
+                print(f"[IMAGE] {username} が画像を送信しました。")
+                message = {"username": username, "image_data": payload, "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+                board_messages.append(message)
+                save_chat_log()
+                broadcast_board_info()
+
+            elif command == "AI_HELP": # [機能追加] プロンプトを受け取る
+                print(f"[AI] {username} がAIを呼び出しました。プロンプト: '{payload}'")
+                ai_response = call_gemini_api(board_messages, user_prompt=payload)
                 ai_message = {"username": "AI Assistant", "message": ai_response, "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
                 board_messages.append(ai_message)
                 save_chat_log()
