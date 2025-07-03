@@ -11,7 +11,7 @@ HOST = '0.0.0.0'
 PORT = 8765
 CHAT_LOG_FILE = "chat_log.json"
 
-# --- Gemini API 設定 (変更なし) ---
+# --- Gemini API 設定 ---
 try:
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
     if not GEMINI_API_KEY:
