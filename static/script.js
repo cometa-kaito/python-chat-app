@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentUsername = username;
 
         // Socket.IOでサーバーに接続
-        socket = io(`http://10.101.223.218:5000`);
+        socket = io(`http://${ip}:5000`);
         
         // UIを切り替え
         connectionContainer.classList.add('hidden');
