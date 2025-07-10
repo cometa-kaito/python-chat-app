@@ -4,18 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webチャット</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="connection-container">
-        <h3>サーバーに接続</h3>
-        <input type="text" id="server-ip-input" placeholder="サーバーのIPアドレス (例: 192.168.1.10)">
-        <input type="text" id="username-input" placeholder="あなたの名前">
-        <button id="connect-btn">接続</button>
-    </div>
-
-    <div id="chat-container" class="hidden">
+    <div id="chat-container">
         <div id="chat-box">
             </div>
         <div id="input-area">
@@ -26,7 +18,6 @@
             <button id="ai-btn">AI</button>
         </div>
     </div>
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="script.js"></script>
 </body>
 </html>
