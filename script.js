@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let username = "";
     // WebSocketサーバーに接続
-    const socket = new WebSocket('ws://localhost:8765');
+    const socket = new WebSocket('ws://10.101.223.218:8765');
 
     // 接続が開いたとき
     socket.onopen = () => {
