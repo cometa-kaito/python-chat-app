@@ -8,6 +8,40 @@ body {
     height: 100vh;
 }
 
+/* --- 接続画面のスタイル --- */
+#connection-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#connection-container input {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#connection-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+#connection-container button:hover {
+    background-color: #0073e6;
+}
+.hidden {
+    display: none !important;
+}
+
+/* --- チャット画面のスタイル (提供されたものをベース) --- */
 #chat-container {
     width: 90%;
     max-width: 800px;
@@ -54,7 +88,7 @@ body {
 
 /* 自分以外のメッセージ */
 .other { align-items: flex-start; }
-.other .content { background-color: #e4e6eb; }
+.other .content { background-color: #e4e6eb; color: #000; }
 .other .meta { text-align: left; }
 
 /* 自分のメッセージ */
@@ -63,16 +97,18 @@ body {
 .me .meta { text-align: right; }
 
 /* サーバーメッセージ */
+.server .content { background-color: transparent; color: #888; font-style: italic; font-size: 0.9em; padding: 5px; }
 .server { align-items: center; }
-.server .content { background-color: transparent; color: #888; font-style: italic; font-size: 0.9em; }
+
 
 /* AIメッセージ */
 .ai { align-items: flex-start; }
-.ai .content { background-color: #e8f5e9; border: 1px solid #a5d6a7; }
+.ai .content { background-color: #e8f5e9; border: 1px solid #a5d6a7; color: #000;}
 
 #input-area {
     display: flex;
     padding: 15px;
+    align-items: center;
 }
 
 #msg-input {
@@ -97,6 +133,7 @@ button, .image-btn-label {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 button:hover, .image-btn-label:hover {
     background-color: #0073e6;
