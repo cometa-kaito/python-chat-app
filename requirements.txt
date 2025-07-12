@@ -1,1 +1,2 @@
 websockets
+google.generativeai
